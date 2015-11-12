@@ -10,5 +10,11 @@ bsplinebasis <- function(t,i,d){
 test <- test+0
 
 plot0<-matplot(x,t(test), type = c("l"),pch=1,col = 1:15) #plot
-return(list(test,plot0))
+plot0
+test
+#return(list(test,plot0))
 }
+#vecteur0<-sapply(t,degre0)  
+  #return(vecteur0)
+
+
