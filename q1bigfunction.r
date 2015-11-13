@@ -1,10 +1,11 @@
 t<- seq(0,0.99,0.01)
 noeuds<- seq(-0.2,1.2,0.1)
 bsplinebasis <- function(t,i,d=3){
+  #on crée une liste dans laquelle on stockera toute les matrices
   matrices <-list()
   x<- 1:100
   matrices[[1]] <- matrix(nrow=(length(i)-1), ncol=length(t))
-  
+  #premier for pour définir la bspline de degré 0
   for (n in 1:(length(i)-1))
   {
     matrices[[1]][n,] <- i[n]<=t & i[n+1]>t
