@@ -2,14 +2,14 @@ bsplinebasis1<- function(t,i,d){
   d=1
   k=1:(length(i)-1)
   
-  for (z in )
+  for (z in k)
   {
     mat1[z] <- ((t-i[z])/(i[z+d]-i[z]))*b0[1,] + ((i[z+d+1]-t) / (i[z+d+1] - i[z+1]))*b0[1,z+1]
   } 
 }
 mat1<-matrix(ncol=100,nrow=15)
 d=1
-k=1:(length(i)-1)
+k=1:(length(i)-2)
 
 for (z in k)
 {

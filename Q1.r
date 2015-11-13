@@ -3,9 +3,9 @@ t<- seq(0,0.99,0.01)
 noeuds<- seq(-0.2,1.2,0.1)
 bsplinebasis <- function(t,i,d){
   x<- 1:100
-  test <- matrix(nrow=length(i), ncol=length(t))
+  test <- matrix(nrow=(length(i)-1), ncol=length(t))
 
-  for (n in 1:length(i))
+  for (n in 1:(length(i)-1))
      {
   test[n,] <- i[n]<=t & i[n+1]>t
  
