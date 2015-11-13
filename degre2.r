@@ -5,3 +5,5 @@ for (z in k)
 } 
 
 matplot(x,t(mat2), type = c("l"),pch=1,col = 1:15)
+
+d=2
