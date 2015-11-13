@@ -3,7 +3,7 @@ noeuds<- seq(-0.2,1.2,0.1)
 bsplinebasis <- function(t,i,d=3){
   #on crée une liste dans laquelle on stockera toute les matrices
   matrices <-list()
-  x<- 1:100
+  x<- 1:length(t)
   matrices[[1]] <- matrix(nrow=(length(i)-1), ncol=length(t))
   #premier for pour définir la bspline de degré 0
   for (n in 1:(length(i)-1))
@@ -14,7 +14,7 @@ bsplinebasis <- function(t,i,d=3){
   matrices[[1]] <- matrices[[1]] +0
   #matrices de degré 1 jusque d + 1
   for(m in 2:(d+1)){
-    mat<-matrix(ncol=length(t),nrow=(15-m))
+    mat<-matrix(ncol=length(t),nrow=(length(i)-m))
     mutrice<- matrices[[m-1]]
     k=1:(length(i)-m)
     dg <- m-1
@@ -25,7 +25,8 @@ bsplinebasis <- function(t,i,d=3){
     matrices[[m]]<-mat
   }
   par(mfrow=c(2,2))
-for(pt in 1:length(matrices)) matplot(x,t(matrices[[pt]]), type = c("l"),pch=1,col = 1:15)
+for(pt in 1:length(matrices)) matplot(x,t(matrices[[pt]]), type = c("l"),pch=1,col = 1:length(i))
   return(matrices)
 }
 b0<-bsplinebasis(t,noeuds,3)
+
